@@ -31,12 +31,28 @@
     <img class="carousel-image hidden" src="images/sv-conference.jpg" />
     <img class="carousel-image hidden" src="images/sv-pair-programming.jpg" />
   </section>
+  <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("carousel-image");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    </script>
 
   <header>
     <div id="logo">
       <img src="images/pied_piper_logo.png" alt="">
     </div>
-    <nav>
+    <nav id="navbar">
       <div class="nav-item">
         <a href="">The Box</a>
       </div>
@@ -65,10 +81,12 @@
       </div>
     </div>
   </section>
-
+  <table>
+    
   <section id='portfolio'>
     <h1>PROJECTS</h1>
     <div class="wrap">
+      <tr>
       <div class="projects">
         <h1>Aviatto</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
@@ -86,6 +104,8 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
         <button>DEMO</button>
+      </tr>
+      <tr>
       </div>
       <div class="projects">
         <h1>Internet Radio by Russ Hanneman</h1>
@@ -106,8 +126,9 @@
         <button>DEMO</button>
       </div>
     </div>
-
+    </tr>
   </section>
+  </table>
   <footer>
   </footer>
 
